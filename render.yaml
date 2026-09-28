@@ -1,0 +1,17 @@
+# Render Blueprint configuration for Wilderness Dojo
+# https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: wilderness-dojo
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        sync: false # Render dashboard will prompt to set your Gemini API key securely
