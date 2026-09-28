@@ -2,7 +2,155 @@ import { WildernessDojo, Participant, SponsorOrg } from '../types';
 
 export const INITIAL_DOJOS: WildernessDojo[] = [
   {
+    id: 'dojo-real-arc-01',
+    isMock: false,
+    title: 'ARC: AI for River Conservation with Microsoft Sparrow & Seeed Studio XIAO',
+    subtitle: 'Building Driftwood-Based Observer Units for Bioacoustics & Camera Monitoring',
+    biome: 'Riparian Watershed',
+    location: 'Agumbe Rainforest Research Centre (Karnataka) & Online (Hybrid)',
+    coordinates: '13.5065° N, 75.0937° E',
+    startDate: '2026-09-15',
+    endDate: '2026-09-15',
+    durationDays: 1,
+    capacity: 30,
+    enrolledCount: 22,
+    status: 'open',
+    difficulty: 'Intermediate Field Tracker',
+    terrainDescription: 'Tropical rainforest riverbanks, riparian waterways, and freshwater tributaries in the Western Ghats biodiversity hotspot.',
+    researchTopic: 'Deploying solar-powered driftwood observer units with Seeed Studio XIAO Mesh, hydrophones, and MegaDetector for freshwater biodiversity monitoring.',
+    researchLead: {
+      name: 'Nvidia DLI Ambassador & AI for Good Lead',
+      title: 'Lead Bioacoustic AI Researcher',
+      institution: 'Microsoft AI for Good Lab & CoderDojo StPaul2',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+      bio: 'Pioneering edge-AI bioacoustic sensor deployment, PyTorch Wildlife integrations, and community-driven river conservation.'
+    },
+    sponsorOrgId: 'sponsor-msft-aiforgood',
+    sponsorName: 'Microsoft AI for Good Lab & CoderDojo StPaul2',
+    tuitionFee: 0,
+    researchGrantAmount: 120000,
+    imageUrl: 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1200&auto=format&fit=crop&q=80',
+    gearRequirements: [
+      'Seeed Studio XIAO Meshmatics MCU development board',
+      'Submersible Hydrophone Probe with pre-amplifier',
+      'Micro-camera trap unit (MegaDetector compatible)',
+      'Mini solar panel (5V/2W) with weatherproof driftwood casing',
+      'Laptop with Python & Microsoft Sparrow Studio installed'
+    ],
+    learningObjectives: [
+      'Introduction to AI for Good and bioacoustics monitoring',
+      'Using Microsoft Sparrow Studio for data collection, annotation, and model training',
+      'Building a driftwood-based observer unit with Seeed Studio XIAO Meshmatics',
+      'Capturing audio with hydrophones and images with camera traps',
+      'End-to-end workflow: from field data to AI models',
+      'Ethics, community science and conservation impact'
+    ],
+    medicalPrerequisites: [
+      'Standard tropical field hydration and leeches/insect protection awareness',
+      'Basic outdoor footing around wet riverbanks and riparian rocks'
+    ],
+    elevationGainMeters: 180,
+    wildernessPermitNumber: 'ARRC-KA-2026-ARC01'
+  },
+  {
+    id: 'dojo-real-gharial-02',
+    isMock: false,
+    title: 'HITL for Gharial & Turtle ISPA at MCBT',
+    subtitle: 'Human-in-the-Loop Bioacoustics & InterSpecies Phonetic Alphabet Workflows',
+    biome: 'Coastal Mangrove & Estuary',
+    location: 'Madras Crocodile Bank Trust (MCBT, Tamil Nadu) & Field Estuary (Hybrid)',
+    coordinates: '12.7533° N, 80.2411° E',
+    startDate: '2026-09-30',
+    endDate: '2026-09-30',
+    durationDays: 1,
+    capacity: 25,
+    enrolledCount: 19,
+    status: 'open',
+    difficulty: 'Advanced Ecological Scout',
+    terrainDescription: 'Estuarine mangrove lagoons, breeding pens, and brackish river delta banks.',
+    researchTopic: 'Human-in-the-loop bioacoustic annotation and InterSpecies Phonetic Alphabet (ISPA) acoustic phonetics for endangered crocodilians and freshwater turtles.',
+    researchLead: {
+      name: 'Dr. Romulus Whitaker & MCBT Team',
+      title: 'Distinguished Conservation Herpetologist',
+      institution: 'Madras Crocodile Bank Trust & CoderDojo StPaul2',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
+      bio: 'Decades of crocodile and reptile conservation leadership across South Asia and international wetlands.'
+    },
+    sponsorOrgId: 'sponsor-msft-aiforgood',
+    sponsorName: 'Microsoft AI for Good Lab & CoderDojo StPaul2',
+    tuitionFee: 0,
+    researchGrantAmount: 95000,
+    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&auto=format&fit=crop&q=80',
+    gearRequirements: [
+      'High-frequency directional hydrophone kit',
+      'Sparrow Studio audio spectrogram annotation workstation',
+      'PyTorch Wildlife runtime environment',
+      'Waterproof field notebook and audio calibration meter'
+    ],
+    learningObjectives: [
+      'Acoustic phonetics and low-frequency reptile vocalization classification',
+      'Developing human-in-the-loop (HITL) verification loops in Sparrow Studio',
+      'ISPA (InterSpecies Phonetic Alphabet) structural tokenization',
+      'Real-time bioacoustic classification of critically endangered Gharials'
+    ],
+    medicalPrerequisites: [
+      'Estuary safety protocol compliance (no solo water approach)',
+      'Heat and humidity field endurance'
+    ],
+    elevationGainMeters: 15,
+    wildernessPermitNumber: 'MCBT-TN-WILD-2026-02'
+  },
+  {
+    id: 'dojo-real-birdnet-03',
+    isMock: false,
+    title: 'Cornell BirdNET + Sparrow + MegaDetector at Agumbe',
+    subtitle: 'From Multi-Modal Species Detection to RavaTTT-Based Bioacoustic LLMs',
+    biome: 'Old-Growth Rainforest',
+    location: 'Agumbe Rainforest Research Centre (Karnataka, Western Ghats)',
+    coordinates: '13.5065° N, 75.0937° E',
+    startDate: '2026-10-15',
+    endDate: '2026-10-15',
+    durationDays: 1,
+    capacity: 35,
+    enrolledCount: 28,
+    status: 'almost_full',
+    difficulty: 'Master Wilderness Specialist',
+    terrainDescription: 'High-canopy wet evergreen rainforest with heavy canopy density in the Cherrapunji of South India.',
+    researchTopic: 'End-to-end multi-modal pipeline integrating Cornell BirdNET acoustic neural networks, MegaDetector vision models, and RavaTTT audio transformer LLMs.',
+    researchLead: {
+      name: 'ARRC Bioacoustic Intelligence Consortium',
+      title: 'Senior Bioacoustic AI Architect',
+      institution: 'Agumbe Rainforest Research Centre & Microsoft AI for Good Lab',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
+      bio: 'Specializing in edge inference models for avian biodiversity in biodiversity-dense tropical canopies.'
+    },
+    sponsorOrgId: 'sponsor-msft-aiforgood',
+    sponsorName: 'Microsoft AI for Good Lab & CoderDojo StPaul2',
+    tuitionFee: 0,
+    researchGrantAmount: 140000,
+    imageUrl: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&auto=format&fit=crop&q=80',
+    gearRequirements: [
+      'Cornell BirdNET-compatible Raspberry Pi / Seeed audio logger',
+      'Parabolic microphone attachment for canopy isolation',
+      'PyTorch Wildlife & RavaTTT transformer inference toolchain',
+      'Rainproof field casing and canopy mounting rig'
+    ],
+    learningObjectives: [
+      'Deploying multi-channel Cornell BirdNET models on rainforest audio feeds',
+      'Combining camera trap vision detections (MegaDetector) with acoustic events',
+      'Fine-tuning RavaTTT bioacoustic LLMs for rare Western Ghats endemic fauna',
+      'Building automated real-time biodiversity telemetry dashboards'
+    ],
+    medicalPrerequisites: [
+      'Rainforest wet weather gear & leech gaiters',
+      'Canopy transect physical fitness'
+    ],
+    elevationGainMeters: 450,
+    wildernessPermitNumber: 'ARRC-KA-2026-BN03'
+  },
+  {
     id: 'dojo-01',
+    isMock: true,
     title: 'High Sierra Alpine Bio-Acoustics Dojo',
     subtitle: 'High-Altitude Avian & Mammalian Audio Telemetry Intensive',
     biome: 'Alpine Crest',
@@ -52,6 +200,7 @@ export const INITIAL_DOJOS: WildernessDojo[] = [
   },
   {
     id: 'dojo-02',
+    isMock: true,
     title: 'Olympic Ancient Canopy Dendrochronology Dojo',
     subtitle: 'Old-Growth Rainforest Canopy Coring & Epiphyte Resilience',
     biome: 'Old-Growth Rainforest',
@@ -101,6 +250,7 @@ export const INITIAL_DOJOS: WildernessDojo[] = [
   },
   {
     id: 'dojo-03',
+    isMock: true,
     title: 'Cascades Sub-Surface Mycelial Network Mapping Dojo',
     subtitle: 'Soil Metagenomics & Fungal Symbiosis Field Expedition',
     biome: 'Boreal Taiga',
@@ -148,6 +298,7 @@ export const INITIAL_DOJOS: WildernessDojo[] = [
   },
   {
     id: 'dojo-04',
+    isMock: true,
     title: 'Everglades Mangrove Blue-Carbon & Apex Predator Dojo',
     subtitle: 'Estuarine Hydrology & American Crocodile Bio-Tracking',
     biome: 'Coastal Mangrove & Estuary',
@@ -196,6 +347,7 @@ export const INITIAL_DOJOS: WildernessDojo[] = [
   },
   {
     id: 'dojo-05',
+    isMock: true,
     title: 'Great Basin Desert Riparian Oasis Forensics Dojo',
     subtitle: 'Endemic Spring Hydro-Geology & Relict Flora Survival',
     biome: 'High Desert Canyon',
@@ -246,7 +398,137 @@ export const INITIAL_DOJOS: WildernessDojo[] = [
 
 export const INITIAL_PARTICIPANTS: Participant[] = [
   {
+    id: 'part-real-01',
+    isMock: false,
+    dojoId: 'dojo-real-arc-01',
+    dojoTitle: 'ARC: AI for River Conservation with Microsoft Sparrow & Seeed Studio XIAO',
+    fullName: 'Ananya Sharma, M.Tech',
+    email: 'ananya.sharma@iisc.ac.in',
+    phone: '+91 98450 22194',
+    age: 27,
+    genderIdentity: 'Female',
+    emergencyContact: {
+      name: 'Rohan Sharma',
+      relationship: 'Spouse',
+      phone: '+91 98450 22195',
+      email: 'rohan.sharma@gmail.com'
+    },
+    dietaryNeeds: 'Vegetarian',
+    priorWildernessExperience: '4 years Western Ghats field expeditions with IISc ecological telemetry lab.',
+    medicalInsurance: {
+      provider: 'Star Health Wilderness & Field Care',
+      policyNumber: 'STAR-WG-902144',
+      groupNumber: 'GRP-IND-01',
+      primaryPhysician: 'Dr. Suresh Rao, MD',
+      physicianPhone: '+91 80 2360 0123',
+      hasPreExistingConditions: false,
+      conditionsDescription: 'None reported. Cleared for remote Western Ghats field trek.',
+      allergies: 'None',
+      currentMedications: 'None',
+      tetanusShotYear: 2025,
+      bloodType: 'B+',
+      evacuationInsuranceAccepted: true
+    },
+    waiverAccepted: true,
+    digitalSignature: 'Ananya Sharma',
+    signatureDate: '2026-08-10',
+    registrationDate: '2026-08-10',
+    status: 'medical_cleared',
+    medicalClearanceNotes: 'Full clearance granted for Agumbe riparian fieldwork and Seeed Studio hardware deployment.',
+    scholarshipRecipient: true,
+    scholarshipSponsorId: 'sponsor-msft-aiforgood',
+    scholarshipNotes: 'Full Fellowship covered by Microsoft AI for Good Lab & CoderDojo StPaul2.',
+    fieldIdBadge: 'WD-2026-ARC-001'
+  },
+  {
+    id: 'part-real-02',
+    isMock: false,
+    dojoId: 'dojo-real-gharial-02',
+    dojoTitle: 'HITL for Gharial & Turtle ISPA at MCBT',
+    fullName: 'Karthik Subramanian',
+    email: 'karthik.subramanian@mcbt.org',
+    phone: '+91 94441 87652',
+    age: 31,
+    genderIdentity: 'Male',
+    emergencyContact: {
+      name: 'Meera Subramanian',
+      relationship: 'Sister',
+      phone: '+91 94441 87653',
+      email: 'meera.subramanian@gmail.com'
+    },
+    dietaryNeeds: 'Standard / No restrictions',
+    priorWildernessExperience: 'Lead field bioacoustician at Madras Crocodile Bank Trust; 6 years reptilian acoustic logging.',
+    medicalInsurance: {
+      provider: 'National Insurance EcoField Plan',
+      policyNumber: 'NIC-MCBT-2026',
+      groupNumber: 'GRP-MCBT',
+      primaryPhysician: 'Dr. R. Natarajan, MBBS',
+      physicianPhone: '+91 44 2491 5521',
+      hasPreExistingConditions: false,
+      conditionsDescription: 'No pre-existing conditions reported. Standard field clearance.',
+      allergies: 'Penicillin',
+      currentMedications: 'None',
+      tetanusShotYear: 2026,
+      bloodType: 'O+',
+      evacuationInsuranceAccepted: true
+    },
+    waiverAccepted: true,
+    digitalSignature: 'Karthik Subramanian',
+    signatureDate: '2026-08-12',
+    registrationDate: '2026-08-12',
+    status: 'medical_cleared',
+    medicalClearanceNotes: 'Certified for brackish estuarine fieldwork and ISPA annotation protocols.',
+    scholarshipRecipient: true,
+    scholarshipSponsorId: 'sponsor-msft-aiforgood',
+    scholarshipNotes: 'MCBT Herpetology Research Fellowship Grant.',
+    fieldIdBadge: 'WD-2026-MCBT-002'
+  },
+  {
+    id: 'part-real-03',
+    isMock: false,
+    dojoId: 'dojo-real-birdnet-03',
+    dojoTitle: 'Cornell BirdNET + Sparrow + MegaDetector at Agumbe',
+    fullName: 'Maya Sundaram, Ph.D.',
+    email: 'maya.sundaram@cornell.edu',
+    phone: '+1 (607) 255-9011',
+    age: 34,
+    genderIdentity: 'Female',
+    emergencyContact: {
+      name: 'V. Sundaram',
+      relationship: 'Father',
+      phone: '+1 (607) 255-9012',
+      email: 'v.sundaram@gmail.com'
+    },
+    dietaryNeeds: 'Vegan',
+    priorWildernessExperience: 'Postdoctoral fellow at Cornell Lab of Ornithology; 8 years bioacoustic transformer modeling.',
+    medicalInsurance: {
+      provider: 'Cornell University Worldwide Scholar Travel Health',
+      policyNumber: 'COR-SCH-2026-778',
+      groupNumber: 'GRP-CORNELL-AI',
+      primaryPhysician: 'Dr. Claire Bennett, MD',
+      physicianPhone: '+1 (607) 555-8821',
+      hasPreExistingConditions: false,
+      conditionsDescription: 'None. Cleared for high-canopy climbing and acoustic rigging.',
+      allergies: 'None',
+      currentMedications: 'None',
+      tetanusShotYear: 2024,
+      bloodType: 'A+',
+      evacuationInsuranceAccepted: true
+    },
+    waiverAccepted: true,
+    digitalSignature: 'Maya Sundaram',
+    signatureDate: '2026-08-14',
+    registrationDate: '2026-08-14',
+    status: 'medical_cleared',
+    medicalClearanceNotes: 'High-canopy safety clearance and RavaTTT field compute rig verified.',
+    scholarshipRecipient: true,
+    scholarshipSponsorId: 'sponsor-msft-aiforgood',
+    scholarshipNotes: 'Cornell BirdNET Global Research Exchange Travel Grant.',
+    fieldIdBadge: 'WD-2026-BIRD-003'
+  },
+  {
     id: 'part-01',
+    isMock: true,
     dojoId: 'dojo-01',
     dojoTitle: 'High Sierra Alpine Bio-Acoustics Dojo',
     fullName: 'Samantha Vance',
@@ -289,6 +571,7 @@ export const INITIAL_PARTICIPANTS: Participant[] = [
   },
   {
     id: 'part-02',
+    isMock: true,
     dojoId: 'dojo-01',
     dojoTitle: 'High Sierra Alpine Bio-Acoustics Dojo',
     fullName: 'Liam Chen, B.S.',
@@ -329,6 +612,7 @@ export const INITIAL_PARTICIPANTS: Participant[] = [
   },
   {
     id: 'part-03',
+    isMock: true,
     dojoId: 'dojo-02',
     dojoTitle: 'Olympic Ancient Canopy Dendrochronology Dojo',
     fullName: 'Kendra Washington',
@@ -371,6 +655,7 @@ export const INITIAL_PARTICIPANTS: Participant[] = [
   },
   {
     id: 'part-04',
+    isMock: true,
     dojoId: 'dojo-04',
     dojoTitle: 'Everglades Mangrove Blue-Carbon & Apex Predator Dojo',
     fullName: 'Diego Ramirez',
@@ -411,6 +696,7 @@ export const INITIAL_PARTICIPANTS: Participant[] = [
   },
   {
     id: 'part-05',
+    isMock: true,
     dojoId: 'dojo-05',
     dojoTitle: 'Great Basin Desert Riparian Oasis Forensics Dojo',
     fullName: 'Dr. Julian Thorne-Smith',
@@ -453,7 +739,93 @@ export const INITIAL_PARTICIPANTS: Participant[] = [
 
 export const INITIAL_SPONSORS: SponsorOrg[] = [
   {
+    id: 'sponsor-msft-aiforgood',
+    isMock: false,
+    name: 'Microsoft AI for Good Lab & Microsoft Azure',
+    logo: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=150&auto=format&fit=crop&q=80',
+    category: 'Eco-Tech Philanthropy',
+    tier: 'Visionary Patron',
+    contactPerson: {
+      name: 'AI for Earth & Good Lab Research Directors',
+      title: 'Global Director of AI for Earth & Ecological Innovation',
+      email: 'ai4earth@coderdojostpaul2.org',
+      phone: '+1 (425) 882-8080'
+    },
+    totalCommitted: 355000,
+    totalPaid: 355000,
+    sponsoredDojoIds: ['dojo-real-arc-01', 'dojo-real-gharial-02', 'dojo-real-birdnet-03'],
+    researchProjects: [
+      {
+        id: 'proj-real-01',
+        isMock: false,
+        title: 'ARC: AI for River Conservation Driftwood Observers (Microsoft Sparrow + XIAO)',
+        dojoId: 'dojo-real-arc-01',
+        dojoTitle: 'ARC: AI for River Conservation with Microsoft Sparrow & Seeed Studio XIAO',
+        grantAmount: 120000,
+        objective: 'Build and deploy solar-powered driftwood observer nodes equipped with Seeed Studio XIAO Mesh, hydrophone arrays, and MegaDetector camera traps in Agumbe riverways.',
+        milestoneStatus: 'Field Sampling Active',
+        deliverables: [
+          '30 Driftwood-based low-cost bioacoustic & vision observer units',
+          'Microsoft Sparrow Studio data annotation and model training pipeline',
+          'Acoustic spectrum dataset for Western Ghats riverine biodiversity',
+          'Open-source firmware and hardware build specifications on GitHub'
+        ],
+        speciesCataloged: 112,
+        hectaresSurveyed: 18500,
+        sensorNodesDeployed: 28,
+        publishedReportUrl: 'https://bit.ly/arc-ai-river-conservation',
+        lastTelemetryDate: '2026-08-16'
+      },
+      {
+        id: 'proj-real-02',
+        isMock: false,
+        title: 'HITL for Gharial & Turtle ISPA Telemetry at MCBT',
+        dojoId: 'dojo-real-gharial-02',
+        dojoTitle: 'HITL for Gharial & Turtle ISPA at MCBT',
+        grantAmount: 95000,
+        objective: 'Establish Human-in-the-loop (HITL) bioacoustic workflows and InterSpecies Phonetic Alphabet (ISPA) acoustic phonetics for critically endangered Gharials and freshwater turtles.',
+        milestoneStatus: 'DNA/Acoustic Analysis',
+        deliverables: [
+          'ISPA phonetic token dictionary for crocodilian acoustic signaling',
+          'Sparrow Studio human-in-the-loop active learning classifier',
+          'Submersible estuarine hydrophone sensor mesh validation'
+        ],
+        speciesCataloged: 46,
+        hectaresSurveyed: 8400,
+        sensorNodesDeployed: 18,
+        publishedReportUrl: 'https://mcbt.org/research/ispa-gharial-2026',
+        lastTelemetryDate: '2026-08-15'
+      },
+      {
+        id: 'proj-real-03',
+        isMock: false,
+        title: 'Agumbe Multi-Modal BirdNET + MegaDetector + RavaTTT LLM Canopy Sentinel',
+        dojoId: 'dojo-real-birdnet-03',
+        dojoTitle: 'Cornell BirdNET + Sparrow + MegaDetector at Agumbe',
+        grantAmount: 140000,
+        objective: 'Integrate Cornell BirdNET acoustic neural networks, MegaDetector vision models, and RavaTTT bioacoustic transformer models for full-canopy real-time biodiversity detection.',
+        milestoneStatus: 'Field Sampling Active',
+        deliverables: [
+          'Multi-modal acoustic-visual species detection pipeline on PyTorch Wildlife',
+          'RavaTTT bioacoustic language model fine-tuned on Agumbe rainforest fauna',
+          'Real-time edge inference telemetry streaming to Microsoft Azure'
+        ],
+        speciesCataloged: 178,
+        hectaresSurveyed: 26000,
+        sensorNodesDeployed: 34,
+        publishedReportUrl: 'https://agumberainforest.org/bioacoustics-birdnet-2026',
+        lastTelemetryDate: '2026-08-16'
+      }
+    ],
+    status: 'Active Partner',
+    website: 'https://bit.ly/arc-ai-river-conservation',
+    sponsorshipDate: '2026-01-10',
+    notes: 'Official Workshop Series Sponsor for AI for Good • AI for Earth in partnership with CoderDojo StPaul2 and Wilderness Dojo.',
+    taxExemptId: 'MSFT-AIEARTH-2026'
+  },
+  {
     id: 'sponsor-01',
+    isMock: true,
     name: 'EarthPulse BioAcoustics Foundation',
     logo: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=150&auto=format&fit=crop&q=80',
     category: 'Eco-Tech Philanthropy',
@@ -470,6 +842,7 @@ export const INITIAL_SPONSORS: SponsorOrg[] = [
     researchProjects: [
       {
         id: 'proj-01',
+        isMock: true,
         title: 'High Sierra Sub-Alpine Bioacoustic Sentinel Grid',
         dojoId: 'dojo-01',
         dojoTitle: 'High Sierra Alpine Bio-Acoustics Dojo',
@@ -490,6 +863,7 @@ export const INITIAL_SPONSORS: SponsorOrg[] = [
       },
       {
         id: 'proj-02',
+        isMock: true,
         title: 'Sierra Alpine Avian Migration Chronology',
         dojoId: 'dojo-01',
         dojoTitle: 'High Sierra Alpine Bio-Acoustics Dojo',
@@ -515,6 +889,7 @@ export const INITIAL_SPONSORS: SponsorOrg[] = [
   },
   {
     id: 'sponsor-02',
+    isMock: true,
     name: 'Canopy Earth Initiative',
     logo: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=150&auto=format&fit=crop&q=80',
     category: 'Conservation Trust',
@@ -531,6 +906,7 @@ export const INITIAL_SPONSORS: SponsorOrg[] = [
     researchProjects: [
       {
         id: 'proj-03',
+        isMock: true,
         title: 'Olympic Rainforest 800-Year Canopy Dendroclimatology',
         dojoId: 'dojo-02',
         dojoTitle: 'Olympic Ancient Canopy Dendrochronology Dojo',
@@ -556,6 +932,7 @@ export const INITIAL_SPONSORS: SponsorOrg[] = [
   },
   {
     id: 'sponsor-03',
+    isMock: true,
     name: 'TerraNova BioVenture Fund',
     logo: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=150&auto=format&fit=crop&q=80',
     category: 'Corporate Sustainability Fund',
@@ -572,6 +949,7 @@ export const INITIAL_SPONSORS: SponsorOrg[] = [
     researchProjects: [
       {
         id: 'proj-04',
+        isMock: true,
         title: 'Cascade Underground Mycelial Carbon Highway Metagenomics',
         dojoId: 'dojo-03',
         dojoTitle: 'Cascades Sub-Surface Mycelial Network Mapping Dojo',
@@ -597,6 +975,7 @@ export const INITIAL_SPONSORS: SponsorOrg[] = [
   },
   {
     id: 'sponsor-04',
+    isMock: true,
     name: 'Apex Oceanic & Wetlands Trust',
     logo: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=150&auto=format&fit=crop&q=80',
     category: 'Conservation Trust',
@@ -613,6 +992,7 @@ export const INITIAL_SPONSORS: SponsorOrg[] = [
     researchProjects: [
       {
         id: 'proj-05',
+        isMock: true,
         title: 'Everglades Ten Thousand Islands Blue-Carbon Peat Accretion',
         dojoId: 'dojo-04',
         dojoTitle: 'Everglades Mangrove Blue-Carbon & Apex Predator Dojo',
@@ -638,6 +1018,7 @@ export const INITIAL_SPONSORS: SponsorOrg[] = [
   },
   {
     id: 'sponsor-05',
+    isMock: true,
     name: 'GreenHorizon Renewable & Ecology Fund',
     logo: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=150&auto=format&fit=crop&q=80',
     category: 'Outdoor Heritage Brand',
@@ -654,6 +1035,7 @@ export const INITIAL_SPONSORS: SponsorOrg[] = [
     researchProjects: [
       {
         id: 'proj-06',
+        isMock: true,
         title: 'Great Basin Relict Spring Aquifer Forensics',
         dojoId: 'dojo-05',
         dojoTitle: 'Great Basin Desert Riparian Oasis Forensics Dojo',

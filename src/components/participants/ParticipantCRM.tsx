@@ -23,7 +23,8 @@ import {
   Phone,
   Mail,
   HeartPulse,
-  Award
+  Award,
+  Cpu
 } from 'lucide-react';
 
 export const ParticipantCRM: React.FC = () => {
@@ -33,6 +34,7 @@ export const ParticipantCRM: React.FC = () => {
     deleteParticipant,
     updateParticipantStatus,
     showToast,
+    setActiveTab
   } = useDojo();
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -192,6 +194,16 @@ export const ParticipantCRM: React.FC = () => {
         <div className="flex items-center gap-2.5">
           <button
             type="button"
+            onClick={() => setActiveTab('antigravity_agent')}
+            className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-amber-800 bg-amber-100 hover:bg-amber-200 rounded-xl transition-colors border border-amber-300 shadow-xs cursor-pointer"
+            id="btn-antigravity-medical-audit"
+          >
+            <Cpu className="w-4 h-4 text-amber-700" />
+            <span>Antigravity Medical Audit</span>
+          </button>
+
+          <button
+            type="button"
             onClick={handleExportCSV}
             className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-stone-700 bg-stone-100 hover:bg-stone-200 rounded-xl transition-colors border border-stone-200 cursor-pointer"
             id="btn-export-participants-csv"
@@ -334,7 +346,14 @@ export const ParticipantCRM: React.FC = () => {
                   <tr key={p.id} className="hover:bg-stone-50/80 transition-colors">
                     {/* Participant & Badge */}
                     <td className="p-4">
-                      <div className="font-bold text-stone-900 text-sm">{p.fullName}</div>
+                      <div className="flex items-center gap-2">
+                        <span className="font-bold text-stone-900 text-sm">{p.fullName}</span>
+                        {p.isMock && (
+                          <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.2 rounded bg-amber-100 text-amber-800 border border-amber-300">
+                            Mock Data
+                          </span>
+                        )}
+                      </div>
                       <div className="text-[11px] text-stone-500 flex items-center gap-2 mt-0.5">
                         <span className="font-mono text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded font-semibold border border-emerald-200">
                           {p.fieldIdBadge}

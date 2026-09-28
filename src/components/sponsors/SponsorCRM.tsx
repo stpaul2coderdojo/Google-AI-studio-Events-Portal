@@ -21,11 +21,12 @@ import {
   ExternalLink,
   ChevronRight,
   ShieldCheck,
-  Search
+  Search,
+  Cpu
 } from 'lucide-react';
 
 export const SponsorCRM: React.FC = () => {
-  const { sponsors, deleteSponsor, updateResearchProject, showToast } = useDojo();
+  const { sponsors, deleteSponsor, updateResearchProject, showToast, setActiveTab } = useDojo();
 
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedSponsorForReport, setSelectedSponsorForReport] = useState<SponsorOrg | null>(null);
@@ -79,6 +80,16 @@ export const SponsorCRM: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-2.5">
+          <button
+            type="button"
+            onClick={() => setActiveTab('antigravity_agent')}
+            className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-teal-800 bg-teal-100 hover:bg-teal-200 rounded-xl transition-colors border border-teal-300 shadow-xs cursor-pointer"
+            id="btn-antigravity-grant-planner"
+          >
+            <Cpu className="w-4 h-4 text-teal-700" />
+            <span>Antigravity Grant Planner</span>
+          </button>
+
           <button
             type="button"
             onClick={() => setIsAddSponsorOpen(true)}
@@ -171,6 +182,11 @@ export const SponsorCRM: React.FC = () => {
                       <span className="px-2.5 py-0.5 text-xs font-bold rounded-md bg-teal-100 text-teal-800 border border-teal-200">
                         {sponsor.tier}
                       </span>
+                      {sponsor.isMock && (
+                        <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 border border-amber-300">
+                          Mock Data
+                        </span>
+                      )}
                       <span className="text-xs text-stone-500 font-semibold">{sponsor.category}</span>
                       <span className="text-[11px] text-stone-400 font-mono">Tax ID: {sponsor.taxExemptId}</span>
                     </div>
@@ -266,6 +282,11 @@ export const SponsorCRM: React.FC = () => {
                             <span className="font-mono text-xs font-bold text-teal-800 bg-teal-100/70 px-2 py-0.5 rounded">
                               ${project.grantAmount.toLocaleString()} Grant
                             </span>
+                            {project.isMock && (
+                              <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.2 rounded bg-amber-100 text-amber-800 border border-amber-300">
+                                Mock Data
+                              </span>
+                            )}
                             <span className="text-xs text-stone-500">
                               Dojo: <strong>{project.dojoTitle}</strong>
                             </span>

@@ -4,6 +4,7 @@ import { WildernessDojo, DojoStatus, BiomeType } from '../../types';
 import { DojoModal } from './DojoModal';
 import { DojoDetailDrawer } from './DojoDetailDrawer';
 import { ConfirmationModal } from '../common/ConfirmationModal';
+import { DatasetImportModal } from '../common/DatasetImportModal';
 import {
   Tent,
   Plus,
@@ -21,7 +22,9 @@ import {
   Clock,
   Sparkles,
   Mountain,
-  FileCheck
+  FileCheck,
+  Upload,
+  Database
 } from 'lucide-react';
 
 export const DojoManager: React.FC = () => {
@@ -30,8 +33,10 @@ export const DojoManager: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [filterBiome, setFilterBiome] = useState<BiomeType | 'all'>('all');
   const [filterStatus, setFilterStatus] = useState<DojoStatus | 'all'>('all');
+  const [dataOriginFilter, setDataOriginFilter] = useState<'all' | 'real_only' | 'mock_only'>('all');
 
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+  const [isImportModalOpen, setIsImportModalOpen] = useState(false);
   const [dojoToEdit, setDojoToEdit] = useState<WildernessDojo | null>(null);
   const [selectedDrawerDojo, setSelectedDrawerDojo] = useState<WildernessDojo | null>(null);
   const [dojoToDelete, setDojoToDelete] = useState<WildernessDojo | null>(null);
@@ -43,7 +48,12 @@ export const DojoManager: React.FC = () => {
       d.researchTopic.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesBiome = filterBiome === 'all' || d.biome === filterBiome;
     const matchesStatus = filterStatus === 'all' || d.status === filterStatus;
-    return matchesSearch && matchesBiome && matchesStatus;
+    const matchesOrigin =
+      dataOriginFilter === 'all' ||
+      (dataOriginFilter === 'real_only' && !d.isMock) ||
+      (dataOriginFilter === 'mock_only' && d.isMock);
+
+    return matchesSearch && matchesBiome && matchesStatus && matchesOrigin;
   });
 
   const getStatusBadge = (status: DojoStatus) => {
@@ -77,14 +87,25 @@ export const DojoManager: React.FC = () => {
           </p>
         </div>
 
-        <button
-          onClick={() => setIsCreateModalOpen(true)}
-          className="flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-bold rounded-xl shadow-xs transition-colors cursor-pointer"
-          id="btn-create-new-dojo"
-        >
-          <Plus className="w-4 h-4" />
-          <span>New Wilderness Dojo</span>
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setIsImportModalOpen(true)}
+            className="flex items-center gap-2 px-3.5 py-2.5 bg-[#18221c] hover:bg-[#233027] text-emerald-300 border border-emerald-500/40 text-xs sm:text-sm font-bold rounded-xl shadow-xs transition-colors cursor-pointer"
+            id="btn-import-dataset"
+          >
+            <Upload className="w-4 h-4" />
+            <span>Import / Real Datasets</span>
+          </button>
+
+          <button
+            onClick={() => setIsCreateModalOpen(true)}
+            className="flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-bold rounded-xl shadow-xs transition-colors cursor-pointer"
+            id="btn-create-new-dojo"
+          >
+            <Plus className="w-4 h-4" />
+            <span>New Wilderness Dojo</span>
+          </button>
+        </div>
       </div>
 
       {/* Filter Bar */}
@@ -101,7 +122,17 @@ export const DojoManager: React.FC = () => {
           />
         </div>
 
-        <div className="flex items-center gap-2 w-full md:w-auto">
+        <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
+          <select
+            value={dataOriginFilter}
+            onChange={(e) => setDataOriginFilter(e.target.value as any)}
+            className="px-3 py-2 text-xs rounded-xl border border-[#2d3a30] bg-[#18221c] text-[#e0e7e1] font-medium focus:border-emerald-500 focus:outline-hidden"
+          >
+            <option value="all">All Data ({dojos.length})</option>
+            <option value="real_only">Real Data Only (3)</option>
+            <option value="mock_only">Mock Data Only</option>
+          </select>
+
           <select
             value={filterBiome}
             onChange={(e) => setFilterBiome(e.target.value as any)}
@@ -109,6 +140,7 @@ export const DojoManager: React.FC = () => {
             id="select-manager-filter-biome"
           >
             <option value="all">All Ecosystems</option>
+            <option value="Riparian Watershed">Riparian Watershed</option>
             <option value="Alpine Crest">Alpine Crest</option>
             <option value="Old-Growth Rainforest">Old-Growth Rainforest</option>
             <option value="Boreal Taiga">Boreal Taiga</option>
@@ -157,6 +189,11 @@ export const DojoManager: React.FC = () => {
                     <span className="text-xs font-semibold px-2 py-0.5 rounded bg-[#18221c] text-[#c2d1c6] border border-[#2d3a30]">
                       {dojo.biome}
                     </span>
+                    {dojo.isMock && (
+                      <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-amber-950/80 text-amber-300 border border-amber-500/40">
+                        Mock Data
+                      </span>
+                    )}
                     <span className="text-xs text-[#8c9e92] font-mono">
                       Permit: {dojo.wildernessPermitNumber}
                     </span>
@@ -302,6 +339,13 @@ export const DojoManager: React.FC = () => {
           isDestructive={true}
           onConfirm={() => deleteDojo(dojoToDelete.id)}
           onCancel={() => setDojoToDelete(null)}
+        />
+      )}
+
+      {isImportModalOpen && (
+        <DatasetImportModal
+          isOpen={isImportModalOpen}
+          onClose={() => setIsImportModalOpen(false)}
         />
       )}
     </div>

@@ -69,6 +69,11 @@ export const MedicalDossierModal: React.FC<MedicalDossierModalProps> = ({ partic
                 <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
                   Field Medic & Safety Dossier
                 </span>
+                {participant.isMock && (
+                  <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                    Mock Data
+                  </span>
+                )}
                 <span className="font-mono text-xs text-stone-400 font-semibold">
                   {participant.fieldIdBadge}
                 </span>

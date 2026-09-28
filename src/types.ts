@@ -24,6 +24,7 @@ export interface ResearchLead {
 
 export interface WildernessDojo {
   id: string;
+  isMock?: boolean;
   title: string;
   subtitle: string;
   biome: BiomeType;
@@ -83,6 +84,7 @@ export type ParticipantStatus =
 
 export interface Participant {
   id: string;
+  isMock?: boolean;
   dojoId: string;
   dojoTitle: string;
   fullName: string;
@@ -128,6 +130,7 @@ export type ResearchMilestoneStatus =
 
 export interface EcologicalResearchProject {
   id: string;
+  isMock?: boolean;
   title: string;
   dojoId: string;
   dojoTitle: string;
@@ -144,6 +147,7 @@ export interface EcologicalResearchProject {
 
 export interface SponsorOrg {
   id: string;
+  isMock?: boolean;
   name: string;
   logo: string;
   category: SponsorCategory;
@@ -170,7 +174,33 @@ export type ActiveTab =
   | 'dojo_manager' 
   | 'participants_crm' 
   | 'sponsors_crm' 
-  | 'impact_analytics';
+  | 'impact_analytics'
+  | 'antigravity_agent';
+
+export interface AntigravityStep {
+  type: string;
+  summary?: string;
+  details?: any;
+}
+
+export interface AntigravityResult {
+  success: boolean;
+  isMock?: boolean;
+  interactionId: string;
+  environmentId: string;
+  agent: string;
+  fullOutput: string;
+  structuredData?: {
+    title?: string;
+    summary?: string;
+    actionsTaken?: string[];
+    stepsSummary?: Array<{ step: string; detail: string }>;
+    generatedData?: Record<string, any>;
+    recommendedActions?: string[];
+  };
+  steps?: AntigravityStep[];
+  timestamp: string;
+}
 
 export interface FilterOptions {
   biome?: BiomeType | 'all';

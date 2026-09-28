@@ -1,6 +1,6 @@
 {
   "name": "Wilderness Dojo CRM",
-  "description": "Wilderness Dojo event management system, public enrollment portal with medical insurance intake, and sponsor CRM for ecological research grants.",
+  "description": "Wilderness Dojo event management system, public enrollment portal with medical insurance intake, sponsor CRM for ecological research grants, and Antigravity Agentic AI autonomous operations.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

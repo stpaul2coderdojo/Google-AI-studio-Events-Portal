@@ -55,9 +55,9 @@ interface DojoContextType {
 const DojoContext = createContext<DojoContextType | undefined>(undefined);
 
 const STORAGE_KEYS = {
-  DOJOS: 'wilderness_dojo_events_v1',
-  PARTICIPANTS: 'wilderness_dojo_participants_v1',
-  SPONSORS: 'wilderness_dojo_sponsors_v1',
+  DOJOS: 'wilderness_dojo_events_v2',
+  PARTICIPANTS: 'wilderness_dojo_participants_v2',
+  SPONSORS: 'wilderness_dojo_sponsors_v2',
 };
 
 export const DojoProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {

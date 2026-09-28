@@ -60,13 +60,25 @@ export const DojoCard: React.FC<DojoCardProps> = ({ dojo, onOpenDetails }) => {
 
         {/* Top Badges */}
         <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2">
-          <span
-            className={`text-xs font-semibold px-2.5 py-1 rounded-lg border backdrop-blur-xs shadow-xs ${getBiomeColor(
-              dojo.biome
-            )}`}
-          >
-            {dojo.biome}
-          </span>
+          <div className="flex items-center gap-1.5 flex-wrap">
+            <span
+              className={`text-xs font-bold px-2.5 py-1 rounded-lg border backdrop-blur-md shadow-xs ${getBiomeColor(
+                dojo.biome
+              )}`}
+            >
+              {dojo.biome}
+            </span>
+            {dojo.isMock ? (
+              <span className="text-[10px] uppercase font-extrabold tracking-wider px-2 py-0.5 rounded bg-amber-950/90 text-amber-300 border border-amber-500/50 backdrop-blur-md">
+                Mock Data
+              </span>
+            ) : (
+              <span className="text-[10px] uppercase font-extrabold tracking-wider px-2 py-0.5 rounded bg-emerald-500/30 text-emerald-300 border border-emerald-400 backdrop-blur-md flex items-center gap-1 shadow-md">
+                <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                <span>Verified Real Series</span>
+              </span>
+            )}
+          </div>
 
           {/* Enrollment Status Pill */}
           {isSoldOut ? (
@@ -80,7 +92,7 @@ export const DojoCard: React.FC<DojoCardProps> = ({ dojo, onOpenDetails }) => {
               Only {spotsLeft} {spotsLeft === 1 ? 'Spot' : 'Spots'} Left
             </span>
           ) : (
-            <span className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-emerald-950/90 text-emerald-300 border border-emerald-500/50 backdrop-blur-xs flex items-center gap-1 shadow-xs">
+            <span className="text-xs font-bold px-2.5 py-1 rounded-lg bg-emerald-950/90 text-emerald-300 border border-emerald-500/50 backdrop-blur-xs flex items-center gap-1 shadow-xs">
               <CheckCircle2 className="w-3.5 h-3.5" />
               {spotsLeft} Spots Open
             </span>
@@ -144,8 +156,30 @@ export const DojoCard: React.FC<DojoCardProps> = ({ dojo, onOpenDetails }) => {
           </div>
         </div>
 
+        {/* Cohort Capacity Progress Bar */}
+        <div className="mt-3 space-y-1">
+          <div className="flex items-center justify-between text-[11px] text-[#8c9e92]">
+            <span>Cohort Enrolled</span>
+            <span className="font-semibold text-[#e0e7e1]">
+              {dojo.enrolledCount} / {dojo.capacity} Spots ({Math.round((dojo.enrolledCount / dojo.capacity) * 100)}%)
+            </span>
+          </div>
+          <div className="w-full bg-[#18221c] h-1.5 rounded-full overflow-hidden border border-[#2d3a30]/60">
+            <div
+              className={`h-full rounded-full transition-all duration-300 ${
+                dojo.enrolledCount >= dojo.capacity
+                  ? 'bg-rose-500'
+                  : dojo.enrolledCount / dojo.capacity > 0.8
+                  ? 'bg-amber-400'
+                  : 'bg-emerald-500'
+              }`}
+              style={{ width: `${Math.min(100, (dojo.enrolledCount / dojo.capacity) * 100)}%` }}
+            />
+          </div>
+        </div>
+
         {/* Lead Ecologist */}
-        <div className="mt-4 flex items-center gap-2.5">
+        <div className="mt-3.5 flex items-center gap-2.5">
           <img
             src={dojo.researchLead.avatar}
             alt={dojo.researchLead.name}

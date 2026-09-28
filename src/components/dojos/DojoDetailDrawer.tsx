@@ -17,7 +17,8 @@ import {
   Tent,
   Sparkles,
   CheckCircle2,
-  AlertCircle
+  AlertCircle,
+  Cpu
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -34,7 +35,7 @@ export const DojoDetailDrawer: React.FC<DojoDetailDrawerProps> = ({
   onEnroll,
   onEditDojo,
 }) => {
-  const { getParticipantsByDojo, sponsors } = useDojo();
+  const { getParticipantsByDojo, sponsors, setActiveTab } = useDojo();
   const dojoParticipants = getParticipantsByDojo(dojo.id);
   const sponsor = sponsors.find((s) => s.id === dojo.sponsorOrgId);
 
@@ -78,6 +79,11 @@ export const DojoDetailDrawer: React.FC<DojoDetailDrawerProps> = ({
             <span className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-stone-900/90 text-stone-200 backdrop-blur-md border border-stone-700">
               {dojo.difficulty}
             </span>
+            {dojo.isMock && (
+              <span className="text-xs font-bold px-2.5 py-1 rounded-lg bg-amber-950/90 text-amber-300 backdrop-blur-md border border-amber-500/50 uppercase tracking-wider">
+                Mock Data
+              </span>
+            )}
           </div>
 
           <div className="absolute bottom-4 left-4 right-4 text-white">
@@ -267,6 +273,19 @@ export const DojoDetailDrawer: React.FC<DojoDetailDrawerProps> = ({
         {/* Drawer Footer Actions */}
         <div className="p-4 bg-stone-100 border-t border-stone-200 flex items-center justify-between gap-3 shrink-0">
           <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                onClose();
+                setActiveTab('antigravity_agent');
+              }}
+              className="flex items-center gap-1.5 px-3 py-2 text-xs font-bold text-emerald-800 bg-emerald-100 hover:bg-emerald-200 border border-emerald-300 rounded-xl cursor-pointer shadow-xs transition-colors"
+              id="dispatch-antigravity-drawer-btn"
+            >
+              <Cpu className="w-3.5 h-3.5 text-emerald-700" />
+              <span>Antigravity AI Planner</span>
+            </button>
+
             {onEditDojo && (
               <button
                 type="button"
@@ -274,7 +293,7 @@ export const DojoDetailDrawer: React.FC<DojoDetailDrawerProps> = ({
                 className="px-3 py-2 text-xs font-semibold text-stone-700 bg-white hover:bg-stone-200 border border-stone-300 rounded-xl cursor-pointer"
                 id="edit-dojo-drawer-btn"
               >
-                Edit Specifications
+                Edit Specs
               </button>
             )}
           </div>

@@ -10,7 +10,8 @@ import {
   RotateCcw,
   Sparkles,
   ShieldCheck,
-  Trees
+  Trees,
+  Cpu
 } from 'lucide-react';
 
 export const Header: React.FC = () => {
@@ -60,6 +61,13 @@ export const Header: React.FC = () => {
       id: 'impact_analytics',
       label: 'Ecological Impact',
       icon: BarChart3
+    },
+    {
+      id: 'antigravity_agent',
+      label: 'Antigravity Agent',
+      icon: Cpu,
+      badge: 'Agentic AI',
+      badgeColor: 'bg-emerald-950/90 text-emerald-300 border border-emerald-500/50 font-bold'
     }
   ];
 
@@ -88,19 +96,24 @@ export const Header: React.FC = () => {
 
           {/* Right Header Status Badges & Utilities */}
           <div className="flex items-center gap-3">
-            <div className="hidden md:flex items-center gap-2 bg-[#18221c] px-3 py-1.5 rounded-lg border border-[#2d3a30] text-xs">
+            <div className="flex items-center gap-1.5 bg-emerald-500/20 border border-emerald-400 text-emerald-300 px-2.5 py-1 rounded-xl text-xs font-bold shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>ARC Real Series Active</span>
+            </div>
+
+            <div className="hidden md:flex items-center gap-2 bg-[#18221c] px-3 py-1.5 rounded-xl border border-[#2d3a30] text-xs">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span className="text-[#c2d1c6]">Med-Evac Certified</span>
+              <span className="text-[#c2d1c6] font-medium">Med-Evac Certified</span>
             </div>
 
             <button
               onClick={resetToDefaults}
               title="Reset to initial demo data"
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs text-[#8c9e92] hover:text-[#e0e7e1] hover:bg-[#1c2821] rounded-lg transition-colors border border-transparent hover:border-[#2d3a30] cursor-pointer"
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs text-[#8c9e92] hover:text-[#e0e7e1] hover:bg-[#1c2821] rounded-xl transition-colors border border-transparent hover:border-[#2d3a30] cursor-pointer"
               id="header-reset-demo-btn"
             >
               <RotateCcw className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Reset Demo</span>
+              <span className="hidden sm:inline">Reset Defaults</span>
             </button>
           </div>
         </div>

@@ -7,6 +7,7 @@ import { DojoManager } from './components/dojos/DojoManager';
 import { ParticipantCRM } from './components/participants/ParticipantCRM';
 import { SponsorCRM } from './components/sponsors/SponsorCRM';
 import { ImpactAnalytics } from './components/analytics/ImpactAnalytics';
+import { AntigravityAgentHub } from './components/antigravity/AntigravityAgentHub';
 import { EnrollmentModal } from './components/public/EnrollmentModal';
 import { EnrollmentConfirmation } from './components/public/EnrollmentConfirmation';
 import { DojoDetailDrawer } from './components/dojos/DojoDetailDrawer';
@@ -87,6 +88,18 @@ const MainContent: React.FC = () => {
               transition={{ duration: 0.2 }}
             >
               <ImpactAnalytics />
+            </motion.div>
+          )}
+
+          {activeTab === 'antigravity_agent' && (
+            <motion.div
+              key="antigravity_agent"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.2 }}
+            >
+              <AntigravityAgentHub />
             </motion.div>
           )}
         </AnimatePresence>
