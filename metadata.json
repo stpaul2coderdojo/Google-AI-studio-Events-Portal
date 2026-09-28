@@ -1,6 +1,6 @@
 {
   "name": "Wilderness Dojo CRM",
-  "description": "Wilderness Dojo event management system, public enrollment portal with medical insurance intake, sponsor CRM for ecological research grants, and Antigravity Agentic AI autonomous operations.",
+  "description": "Wilderness Dojo event management system, public enrollment portal with medical insurance intake, sponsor CRM for ecological research grants, and Antigravity Agentic AI autonomous operations. Directed by Dr. Bheemaiah Anil K, Director, Wilderness Dojo.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

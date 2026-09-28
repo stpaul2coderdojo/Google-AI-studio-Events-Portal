@@ -29,7 +29,10 @@ import {
   Waves,
   Sun,
   Eye,
-  ArrowUpRight
+  ArrowUpRight,
+  Mail,
+  Globe,
+  Award
 } from 'lucide-react';
 
 export const PublicPortal: React.FC = () => {
@@ -533,6 +536,59 @@ export const PublicPortal: React.FC = () => {
             <div className="p-4 bg-[#18221c] rounded-xl border border-[#2d3a30] text-xs text-center">
               <span className="block font-extrabold text-lg text-teal-400">Garmin InReach</span>
               <span className="text-[#8c9e92] text-[11px]">24/7 Satellite Telemetry</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Institutional Leadership & Directorate */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-[#121c15] via-[#101813] to-[#0c120e] rounded-2xl p-6 sm:p-8 border border-emerald-500/30 shadow-xl">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="space-y-3 max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider">
+              <Award className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Institutional Directorate & Authorship</span>
+            </div>
+            <div>
+              <h3 className="text-xl sm:text-2xl font-extrabold text-[#e0e7e1] tracking-tight">
+                Dr. Bheemaiah Anil K
+              </h3>
+              <p className="text-emerald-400 text-sm font-semibold mt-0.5">
+                Director, Wilderness Dojo • IIT Madras Alumnus
+              </p>
+            </div>
+            <p className="text-xs sm:text-sm text-[#a1b3a6] leading-relaxed">
+              Spearheading the convergence of edge bioacoustic sensor networks, community-driven watershed science, and high-altitude backcountry expedition safety. Directed initiatives include the <em>AI for River Conservation (ARC) Series</em> with Microsoft AI for Good Lab and CoderDojo StPaul2, open-hardware acoustic telemetry, and comprehensive Wilderness First Responder protocols.
+            </p>
+            <div className="flex flex-wrap items-center gap-3 pt-2 text-xs">
+              <a
+                href="mailto:bheemaiah@alumni.iitm.ac.in"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#18241d] hover:bg-[#203127] text-emerald-300 border border-emerald-500/30 transition-colors font-medium"
+              >
+                <Mail className="w-3.5 h-3.5" />
+                <span>bheemaiah@alumni.iitm.ac.in</span>
+              </a>
+              <a
+                href="https://wildernessdojo.home.blog"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#18241d] hover:bg-[#203127] text-emerald-300 border border-emerald-500/30 transition-colors font-medium"
+              >
+                <Globe className="w-3.5 h-3.5" />
+                <span>wildernessdojo.home.blog</span>
+                <ArrowUpRight className="w-3 h-3 text-emerald-400" />
+              </a>
+            </div>
+          </div>
+
+          <div className="shrink-0 p-5 bg-[#16221a] rounded-2xl border border-emerald-500/20 text-center w-full md:w-56 shadow-md">
+            <div className="w-14 h-14 mx-auto rounded-full bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-lg font-black text-xl mb-3">
+              BA
+            </div>
+            <div className="font-bold text-xs text-[#e0e7e1]">Dr. Bheemaiah Anil K</div>
+            <div className="text-[11px] text-[#8c9e92]">Director</div>
+            <div className="mt-3 pt-3 border-t border-[#233529] text-[10px] text-emerald-400 font-medium">
+              Wilderness Dojo Directorate
             </div>
           </div>
         </div>

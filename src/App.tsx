@@ -107,14 +107,39 @@ const MainContent: React.FC = () => {
 
       {/* Footer */}
       <footer className="bg-[#090d0a] text-[#8c9e92] text-xs py-8 border-t border-[#232f27] mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <span className="font-serif italic font-bold text-[#e0e7e1]">Wilderness Dojo</span>
-            <span>• Ecological Field Research & Leadership CRM</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="font-serif italic font-bold text-[#e0e7e1] text-sm">Wilderness Dojo</span>
+              <span className="text-[#56685c]">•</span>
+              <span className="text-emerald-400 font-semibold">Director: Dr. Bheemaiah Anil K</span>
+              <span className="text-[#56685c] hidden sm:inline">•</span>
+              <span className="text-[#8c9e92]">IIT Madras Alumnus</span>
+            </div>
+            <div className="flex items-center gap-4 text-[11px] text-[#728478]">
+              <a
+                href="mailto:bheemaiah@alumni.iitm.ac.in"
+                className="hover:text-emerald-400 transition-colors underline decoration-dotted"
+              >
+                bheemaiah@alumni.iitm.ac.in
+              </a>
+              <span>•</span>
+              <a
+                href="https://wildernessdojo.home.blog"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-400 hover:text-emerald-300 transition-colors font-medium underline"
+              >
+                wildernessdojo.home.blog
+              </a>
+            </div>
           </div>
-          <p className="text-[#728478] text-[11px]">
-            Integrated Field Medic Intake, Verified Health Insurance Protocols, and Sponsoring Benefactor Telemetry.
-          </p>
+          <div className="pt-3 border-t border-[#18221b] flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[#5e7064]">
+            <p>
+              Authored & Directed by Dr. Bheemaiah Anil K. Integrated Field Medic Intake, Verified Health Insurance Protocols, and Sponsoring Benefactor Telemetry.
+            </p>
+            <p>© {new Date().getFullYear()} Wilderness Dojo. All rights reserved.</p>
+          </div>
         </div>
       </footer>
 

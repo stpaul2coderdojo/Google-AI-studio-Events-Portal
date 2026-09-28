@@ -1,11 +1,16 @@
 # 🌲 Wilderness Dojo CRM & Ecological Operations Platform
 
+[![Director](https://img.shields.io/badge/Director-Dr._Bheemaiah_Anil_K-emerald.svg)](https://wildernessdojo.home.blog)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D20.0.0-emerald.svg)](https://nodejs.org/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Docker](https://img.shields.io/badge/docker-ready-2496ED.svg)](https://www.docker.com/)
 [![Render](https://img.shields.io/badge/deploy-Render-46E3B7.svg)](https://render.com/)
 
-A unified full-stack expedition management system, public enrollment portal, ecological research grant CRM, and autonomous Agentic AI operations hub for **Wilderness Dojo**.
+> **Authorship & Leadership**: **Dr. Bheemaiah Anil K**, Director, Wilderness Dojo  
+> **Affiliation**: Indian Institute of Technology Madras (IIT Madras) Alumnus  
+> **Contact**: [bheemaiah@alumni.iitm.ac.in](mailto:bheemaiah@alumni.iitm.ac.in) | **Official Portal**: [wildernessdojo.home.blog](https://wildernessdojo.home.blog)
+
+A unified full-stack expedition management system, public enrollment portal, ecological research grant CRM, and autonomous Agentic AI operations hub for **Wilderness Dojo**, directed by **Dr. Bheemaiah Anil K**.
 
 ---
 
@@ -187,6 +192,17 @@ In Render or Cloud Run, navigate to **Custom Domains** and add a CNAME record fr
 
 ---
 
+## 👤 Authorship & Institutional Leadership
+
+- **Director & Author**: **Dr. Bheemaiah Anil K**
+- **Title**: Director, Wilderness Dojo
+- **Academic Affiliation**: Indian Institute of Technology Madras (IIT Madras) Alumnus
+- **Direct Contact**: [bheemaiah@alumni.iitm.ac.in](mailto:bheemaiah@alumni.iitm.ac.in)
+- **Official Field Portal & Publications**: [https://wildernessdojo.home.blog](https://wildernessdojo.home.blog)
+- **Research Scope**: Field bioacoustics, AI for River Conservation (ARC Series), open hardware acoustic monitors (Seeed Studio XIAO / Meshtastic), and Wilderness First Responder medical safety infrastructure.
+
+---
+
 ## 📄 License
 
-MIT License. Designed and engineered for Wilderness Dojo conservation initiatives.
+MIT License. Designed, authored, and directed by Dr. Bheemaiah Anil K for Wilderness Dojo conservation initiatives.

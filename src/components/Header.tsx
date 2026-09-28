@@ -89,7 +89,7 @@ export const Header: React.FC = () => {
                 </span>
               </div>
               <p className="text-xs text-[#8c9e92] font-normal hidden sm:block">
-                Field Masterclasses • Medical Insurance Verification • Ecological Research Grants
+                Director: <span className="text-emerald-400 font-medium">Dr. Bheemaiah Anil K</span> • Field Masterclasses & Bioacoustics
               </p>
             </div>
           </div>
